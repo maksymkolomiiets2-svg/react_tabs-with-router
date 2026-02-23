@@ -4,6 +4,7 @@ import './App.scss';
 import { Navigate, NavLink, Routes, Route } from 'react-router-dom';
 import { HomePage } from './page/HomePage';
 import { TabsPage } from './page/TabsPage';
+import classNames from 'classnames';
 
 export const App = () => (
   <>
@@ -18,7 +19,7 @@ export const App = () => (
             to="/"
             end
             className={({ isActive }) =>
-              `navbar-item${isActive ? 'is-active' : ''}`
+              classNames('navbar-item', { 'is-active': isActive })
             }
           >
             Home
@@ -26,7 +27,7 @@ export const App = () => (
           <NavLink
             to="/tabs"
             className={({ isActive }) =>
-              `navbar-item${isActive ? 'is-active' : ''}`
+              classNames('navbar-item', { 'is-active': isActive })
             }
           >
             Tabs
