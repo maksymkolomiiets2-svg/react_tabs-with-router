@@ -6,7 +6,6 @@ import { Navbar } from './page/Navbar';
 import { HomePage } from './page/HomePage';
 import { TabsPage } from './page/TabsPage';
 
-
 export const App = () => (
   <div className="has-navbar-fixed-top">
     <Navbar />
