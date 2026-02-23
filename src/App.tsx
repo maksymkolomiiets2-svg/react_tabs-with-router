@@ -1,41 +1,15 @@
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
-import { Navigate, NavLink, Routes, Route } from 'react-router-dom';
+import { Navigate, Routes, Route } from 'react-router-dom';
+import { Navbar } from './page/Navbar';
 import { HomePage } from './page/HomePage';
 import { TabsPage } from './page/TabsPage';
-import classNames from 'classnames';
+
 
 export const App = () => (
-  <>
-    {/* Also requires <html class="has-navbar-fixed-top"> */}
-    <nav
-      className="navbar is-light is-fixed-top is-mobile has-shadow"
-      data-cy="Nav"
-    >
-      <div className="container">
-        <div className="navbar-brand">
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              classNames('navbar-item', { 'is-active': isActive })
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/tabs"
-            className={({ isActive }) =>
-              classNames('navbar-item', { 'is-active': isActive })
-            }
-          >
-            Tabs
-          </NavLink>
-        </div>
-      </div>
-    </nav>
-
+  <div className="has-navbar-fixed-top">
+    <Navbar />
     <div className="section">
       <div className="container">
         <Routes>
@@ -49,5 +23,5 @@ export const App = () => (
         </Routes>
       </div>
     </div>
-  </>
+  </div>
 );
